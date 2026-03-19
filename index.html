@@ -2,87 +2,25 @@
 <html>
   <head>
     <meta charset="utf-8">
-    <title>Celda de Manufactura XR</title>
+    <title>XR Industrial Lab</title>
     <script src="https://cdn.jsdelivr.net/npm/aframe@1.4.1/dist/aframe-master.min.js"></script>
   </head>
   <body>
     <a-scene>
+      <!-- Caja azul rotada -->
+      <a-box position="0 1 -3" rotation="0 45 0" color="#4CC3D9"></a-box>
 
-      <!-- ========== PISO Y ENTORNO ========== -->
-      <a-plane rotation="-90 0 0" width="20" height="20" color="#B0BEC5"></a-plane>
-      <a-sky color="#CFD8DC"></a-sky>
+      <!-- Esfera roja -->
+      <a-sphere position="2 1 -4" radius="1" color="#EF2D5E"></a-sphere>
 
-      <!-- ========== BANDA TRANSPORTADORA ========== -->
-      <!-- Base de la banda -->
-      <a-box position="0 0.2 -4" width="6" height="0.2" depth="1.2" color="#546E7A"></a-box>
-      <!-- Rodillo izquierdo -->
-      <a-cylinder position="-3 0.35 -4" radius="0.15" height="1.2"
-        rotation="90 0 0" color="#37474F"></a-cylinder>
-      <!-- Rodillo derecho -->
-      <a-cylinder position="3 0.35 -4" radius="0.15" height="1.2"
-        rotation="90 0 0" color="#37474F"></a-cylinder>
-      <!-- Superficie de la banda -->
-      <a-box position="0 0.35 -4" width="5.8" height="0.05" depth="1"
-        color="#78909C"></a-box>
-      <!-- Piezas sobre la banda -->
-      <a-box position="-1.5 0.5 -4" width="0.4" height="0.2" depth="0.4"
-        color="#FF7043"></a-box>
-      <a-box position="0.5 0.5 -4" width="0.4" height="0.2" depth="0.4"
-        color="#FF7043"></a-box>
-      <a-box position="2 0.5 -4" width="0.4" height="0.2" depth="0.4"
-        color="#FF7043"></a-box>
+      <!-- Cilindro amarillo -->
+      <a-cylinder position="-2 1 -4" radius="0.5" height="1.5" color="#FFC65D"></a-cylinder>
 
-      <!-- ========== BRAZO ROBOTIZADO ========== -->
-      <!-- Base del robot -->
-      <a-cylinder position="-4 0.3 -4" radius="0.4" height="0.6"
-        color="#455A64"></a-cylinder>
-      <!-- Cuerpo vertical -->
-      <a-box position="-4 1.1 -4" width="0.3" height="1.2" depth="0.3"
-        color="#607D8B"></a-box>
-      <!-- Articulación -->
-      <a-sphere position="-4 1.75 -4" radius="0.2" color="#90A4AE"></a-sphere>
-      <!-- Brazo horizontal -->
-      <a-box position="-3.3 1.9 -4" width="1.2" height="0.2" depth="0.2"
-        color="#607D8B"></a-box>
-      <!-- Pinza izquierda -->
-      <a-box position="-2.75 1.7 -4" width="0.1" height="0.4" depth="0.1"
-        color="#37474F"></a-box>
-      <!-- Pinza derecha -->
-      <a-box position="-2.55 1.7 -4" width="0.1" height="0.4" depth="0.1"
-        color="#37474F"></a-box>
+      <!-- Piso verde -->
+      <a-plane rotation="-90 0 0" width="10" height="10" color="#7BC8A4"></a-plane>
 
-      <!-- ========== TANQUE DE ALMACENAMIENTO ========== -->
-      <a-cylinder position="4 1 -4" radius="0.7" height="2"
-        color="#1565C0"></a-cylinder>
-      <!-- Tapa del tanque -->
-      <a-cylinder position="4 2.1 -4" radius="0.75" height="0.15"
-        color="#0D47A1"></a-cylinder>
-      <!-- Válvula -->
-      <a-cylinder position="4.8 0.8 -4" radius="0.08" height="0.6"
-        rotation="0 0 90" color="#F57F17"></a-cylinder>
-
-      <!-- ========== SENSORES / INDICADORES ========== -->
-      <!-- Sensor 1 - verde (activo) -->
-      <a-sphere position="-1.5 0.85 -3.3" radius="0.1" color="#00E676"></a-sphere>
-      <!-- Sensor 2 - rojo (alerta) -->
-      <a-sphere position="0.5 0.85 -3.3" radius="0.1" color="#FF1744"></a-sphere>
-      <!-- Sensor 3 - verde -->
-      <a-sphere position="2 0.85 -3.3" radius="0.1" color="#00E676"></a-sphere>
-
-      <!-- ========== ESTRUCTURA / COLUMNAS ========== -->
-      <a-box position="-5.5 1.5 -6" width="0.3" height="3" depth="0.3"
-        color="#455A64"></a-box>
-      <a-box position="5.5 1.5 -6" width="0.3" height="3" depth="0.3"
-        color="#455A64"></a-box>
-      <!-- Viga horizontal superior -->
-      <a-box position="0 3 -6" width="11.3" height="0.3" depth="0.3"
-        color="#37474F"></a-box>
-
-      <!-- ========== CÁMARA CON CONTROLES ========== -->
-      <a-entity position="0 1.6 2">
-        <a-camera wasd-controls look-controls></a-camera>
-      </a-entity>
-
+      <!-- Cielo gris claro -->
+      <a-sky color="#ECECEC"></a-sky>
     </a-scene>
   </body>
 </html>
