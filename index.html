@@ -7,7 +7,9 @@
   </head>
   <body>
     <a-scene>
-
+   <a-assets>
+        <a-asset-item id="modeloIndustrial" src="models/modelo.glb"></a-asset-item>
+      </a-assets>
       <!-- ========== PISO Y ENTORNO ========== -->
       <a-plane rotation="-90 0 0" width="20" height="20" color="#B0BEC5"></a-plane>
       <a-sky color="#CFD8DC"></a-sky>
@@ -82,7 +84,12 @@
       <a-entity position="0 1.6 2">
         <a-camera wasd-controls look-controls></a-camera>
       </a-entity>
-
+      <!-- ========== MODELO CAD INDUSTRIAL ========== -->
+      <a-entity 
+        gltf-model="#modeloIndustrial" 
+        position="0 0 -5"
+        scale="0.01 0.01 0.01">
+      </a-entity>
     </a-scene>
   </body>
 </html>
