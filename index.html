@@ -4,12 +4,45 @@
     <meta charset="utf-8">
     <title>Celda de Manufactura XR</title>
     <script src="https://cdn.jsdelivr.net/npm/aframe@1.4.1/dist/aframe-master.min.js"></script>
+
+    <!-- Script para fondo transparente en modo AR -->
+    <script>
+      document.addEventListener('DOMContentLoaded', () => {
+        const scene = document.querySelector('a-scene');
+        scene.addEventListener('enter-vr', () => {
+          if (scene.is('ar-mode')) {
+            document.querySelector('a-sky').setAttribute('visible', false);
+          }
+        });
+        scene.addEventListener('exit-vr', () => {
+          document.querySelector('a-sky').setAttribute('visible', true);
+        });
+      });
+    </script>
   </head>
   <body>
-    <a-scene>
-   <a-assets>
+
+    <!-- Botón VR -->
+    <button id="myEnterVR" style="position:fixed; bottom:20px; right:120px;
+      z-index:999; padding:12px 20px; background:#4CC3D9;
+      color:white; border:none; border-radius:8px;
+      font-size:16px; cursor:pointer">🥽 Entrar VR</button>
+
+    <!-- Botón AR -->
+    <button id="myEnterAR" style="position:fixed; bottom:20px; right:20px;
+      z-index:999; padding:12px 20px; background:#00E676;
+      color:white; border:none; border-radius:8px;
+      font-size:16px; cursor:pointer">📷 Entrar AR</button>
+
+    <a-scene
+      webxr="requiredFeatures: hit-test; optionalFeatures: dom-overlay, unbounded"
+      vr-mode-ui="enterVRButton: #myEnterVR; enterARButton: #myEnterAR">
+
+      <!-- ========== ASSETS (siempre primero) ========== -->
+      <a-assets>
         <a-asset-item id="modeloIndustrial" src="models/modelo.glb"></a-asset-item>
       </a-assets>
+
       <!-- ========== PISO Y ENTORNO ========== -->
       <a-plane rotation="-90 0 0" width="20" height="20" color="#B0BEC5"></a-plane>
       <a-sky color="#CFD8DC"></a-sky>
@@ -84,12 +117,14 @@
       <a-entity position="0 1.6 2">
         <a-camera wasd-controls look-controls></a-camera>
       </a-entity>
+
       <!-- ========== MODELO CAD INDUSTRIAL ========== -->
-      <a-entity 
-        gltf-model="#modeloIndustrial" 
+      <a-entity
+        gltf-model="#modeloIndustrial"
         position="0 0 0"
         scale="0.05 0.05 0.05">
       </a-entity>
+
     </a-scene>
   </body>
 </html>
